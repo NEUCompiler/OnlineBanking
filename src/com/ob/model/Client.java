@@ -1,5 +1,140 @@
 package com.ob.model;
 
-public class Client {
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * Client entity. @author MyEclipse Persistence Tools
+ */
+
+public class Client implements java.io.Serializable {
+
+	// Fields
+
+	private Integer clientId;
+	private String identityId;
+	private String trueName;
+	private String sex;
+	private Integer phone;
+	private String mail;
+	private String accountType;
+	private String userName;
+	private String userPassword;
+	private Set clientaccounts = new HashSet(0);
+
+	// Constructors
+
+	/** default constructor */
+	public Client() {
+	}
+
+	/** minimal constructor */
+	public Client(String identityId, String trueName, String sex, String mail,
+			String accountType, String userName, String userPassword) {
+		this.identityId = identityId;
+		this.trueName = trueName;
+		this.sex = sex;
+		this.mail = mail;
+		this.accountType = accountType;
+		this.userName = userName;
+		this.userPassword = userPassword;
+	}
+
+	/** full constructor */
+	public Client(String identityId, String trueName, String sex,
+			Integer phone, String mail, String accountType, String userName,
+			String userPassword, Set clientaccounts) {
+		this.identityId = identityId;
+		this.trueName = trueName;
+		this.sex = sex;
+		this.phone = phone;
+		this.mail = mail;
+		this.accountType = accountType;
+		this.userName = userName;
+		this.userPassword = userPassword;
+		this.clientaccounts = clientaccounts;
+	}
+
+	// Property accessors
+
+	public Integer getClientId() {
+		return this.clientId;
+	}
+
+	public void setClientId(Integer clientId) {
+		this.clientId = clientId;
+	}
+
+	public String getIdentityId() {
+		return this.identityId;
+	}
+
+	public void setIdentityId(String identityId) {
+		this.identityId = identityId;
+	}
+
+	public String getTrueName() {
+		return this.trueName;
+	}
+
+	public void setTrueName(String trueName) {
+		this.trueName = trueName;
+	}
+
+	public String getSex() {
+		return this.sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public Integer getPhone() {
+		return this.phone;
+	}
+
+	public void setPhone(Integer phone) {
+		this.phone = phone;
+	}
+
+	public String getMail() {
+		return this.mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+
+	public String getAccountType() {
+		return this.accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getUserPassword() {
+		return this.userPassword;
+	}
+
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
+	}
+
+	public Set getClientaccounts() {
+		return this.clientaccounts;
+	}
+
+	public void setClientaccounts(Set clientaccounts) {
+		this.clientaccounts = clientaccounts;
+	}
 
 }

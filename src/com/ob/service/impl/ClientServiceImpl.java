@@ -1,12 +1,9 @@
 package com.ob.service.impl;
 
-import com.ob.dao.ClientDao;
+import com.ob.dao.impl.ClientDaoImpl;
 import com.ob.model.Client;
 
 public class ClientServiceImpl {
-	ClientDao clientDao;
+	ClientDaoImpl clientDaoImpl;
 	
-	public void save() {
-		clientDao.save();
-	}
 }
