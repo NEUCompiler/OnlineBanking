@@ -31,11 +31,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<form action="login.action" method="post"> 
   		<div class="form-group"> 
   			<label for="exampleInputEmail1">用户名</label> 
-  			<input type="text" class="form-control" placeholder="Username"> 
+  			<input type="text" class="form-control" name="username"> 
   		</div> 
   		<div class="form-group"> 
   			<label for="exampleInputPassword1">密码</label> 
-  			<input type="password" class="form-control" placeholder="Password"> 
+  			<input type="password" class="form-control" name="password"> 
   		</div> 
   		<div class="checkbox"> 
   			<label> <input type="checkbox">记住密码</label> 
