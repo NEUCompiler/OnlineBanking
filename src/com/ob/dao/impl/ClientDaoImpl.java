@@ -158,5 +158,4 @@ public class ClientDaoImpl implements ClientDAO {
 	public static ClientDAO getFromApplicationContext(ApplicationContext ctx) {
 		return (ClientDAO) ctx.getBean("ClientDAO");
 	}
-
 }
