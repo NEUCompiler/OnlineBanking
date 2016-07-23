@@ -3,10 +3,11 @@
 <struts>
 	<package name="com.login" namespace="/111" extends="struts-default">
 		
-		<action name="login" class="com.ob.action.LoginClientAction" method="execute">
+		<action name="login" class="com.ob.action.LoginClientAction" method="login">
 			<result name="SUCCESS">/success.jsp</result>
 			<result name="FAIL">/index.jsp</result>
 		</action>
 			
 	</package>
+
 </struts>    

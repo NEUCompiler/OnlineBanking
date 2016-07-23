@@ -22,7 +22,7 @@ public class LoginClientAction extends SuperAction {
 		this.password = password;
 	}
 	
-	public String execute(){
+	public String login(){
 		ClientDAO dao = new ClientDaoImpl();
 		java.util.List user = dao.findByUserName(username);
 		Iterator iter = user.iterator();
