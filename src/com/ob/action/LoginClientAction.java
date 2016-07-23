@@ -1,6 +1,12 @@
 package com.ob.action;
 import java.util.Iterator;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import com.ob.dao.ClientDAO;
 import com.ob.dao.impl.ClientDaoImpl;
 import com.ob.model.Client;
@@ -23,9 +29,19 @@ public class LoginClientAction extends SuperAction {
 	}
 	
 	public String login(){
-		ClientDAO dao = new ClientDaoImpl();
-		java.util.List user = dao.findByUserName(username);
-		Iterator iter = user.iterator();
+		
+		//ClientDAO dao = new ClientDaoImpl();
+		//java.util.List user = dao.findByUserName(username);
+		//Iterator iter = user.iterator();
+		
+		ApplicationContext c = new ClassPathXmlApplicationContext("applicationContext.xml");  
+		SessionFactory sf = (SessionFactory) c.getBean("sessionFactory");
+		Session session = sf.openSession();
+		Query query =  session.createQuery("from Client WHERE userName = ?");
+		query.setString(0, username+"");
+    	java.util.List user = query.list();
+    	Iterator iter = user.iterator();
+		
 		if(user.isEmpty()){
 			return "FAIL";
 		} else {
