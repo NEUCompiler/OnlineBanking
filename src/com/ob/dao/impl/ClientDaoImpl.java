@@ -28,8 +28,10 @@ public class ClientDaoImpl implements ClientDAO {
 
 	private SessionFactory sessionFactory;
 
+	public ClientDaoImpl () {
+	}
+	
 	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
 	}
 
 	public Session getCurrentSession() {
